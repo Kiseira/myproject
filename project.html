@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Personal Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {font-family: "Raleway", sans-serif}
+	body, html {
+	    height: 100%;
+		color: #777:
+		line-height: 1.8;
+	}
+    .parallax-bg {
+      background-image: url('harp.jpg');
+      min-height: 500px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+	.tools-section input, .tools-section button {
+      margin: 5px;
+    }
+    .tool-box {
+      padding: 24px;
+	  margin: 32px 0;
+      background-color: teal;
+      border-left: 6px solid teal;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+	.tools-bg {
+       background-image: url('dandelion.jpg');
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       color: white;
+    }
+
+	.w3-wide {letter-spacing: 10px;;}
+	.w3-hover-opacity {cursor: pointer;}
+	
+    .nav-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="GImaintheme.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<button onclick="playMusic()" class="w3-button w3-teal w3-margin">Play Background Music</button>
+
+<!-- Top Navigation Bar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-card">
+    <a href="#home" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large">ABOUT</a>
+    <a href="#tools" class="w3-bar-item w3-button w3-padding-large">TOOLS</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
+
+    <!-- Search Icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-large w3-right" onclick="toggleSearch()">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Hidden Search Box -->
+  <div id="searchBox" class="w3-bar w3-white w3-padding w3-animate-top" style="display:none">
+    <input type="text" class="w3-input w3-border" placeholder="Search...">
+  </div>
+</div>
+
+<!-- Font Awesome for search icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+  <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-white w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span>
+  </div>
+</div>
+
+<header class="w3-display-container parallax-bg w3-grayscale-min">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-jumbo w3-hide-small">Welcome to My Website</span><br>
+    <span class="w3-text-white w3-large">HTML | CSS | JavaScript</span><br>
+    <a href="myCV.html" class="w3-text-white w3-button w3-aqua w3-margin-top nav-btn">View My CV</a>
+    <a href="downloadCV.pdf" class="w3-text-white w3-button w3-aqua w3-margin-top nav-btn">Download CV (pdf)</a>
+  </div>
+</header>
+
+<!-- About Section -->
+<div class="w3-center w3-teal w3-padding-64 w3-hover-opacity-off" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <div class="w3-row-padding w3-margin-top" style="max-width:900px; margin:auto;">
+    <!-- Image Card -->
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="yourphoto.jpg" alt="My Photo" style="width:100%">
+      </div>
+    </div>
+
+    <!-- Info Card -->
+    <div class="w3-twothird w3-container w3-left-align">
+      <h4><b>Name:</b> Nurin Alysha</h4>
+      <p><b>Matric No:</b> A24DW0217</p>
+      <p><b>Program & Section:</b> 1DSPD 39</p>
+      <p>I am currently pursuing a Diploma in Computer Science. This website was created as part of the DSPD1703 Web Programming course using HTML, CSS, JavaScript, and W3.CSS.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Tools Section -->
+<div class="w3-container tools-bg w3-padding-64 tools-section" id="tools">
+  <h2 class="w3-center w3-text-white">Tools</h2>
+    <div style="max-width:900px; margin:auto">
+	
+      <!-- Simple Calculator -->
+      <div class="tool-box">
+           <h3 style="color:white;">Simple Calculator</h3>
+            <input type="number" id="num1" placeholder="Number 1" class="w3-input">
+            <input type="number" id="num2" placeholder="Number 2" class="w3-input">
+               <div class="w3-margin-top">
+                  <button class="w3-button w3-cyan w3-text-white" onclick="calculate('+')">Add</button>
+                  <button class="w3-button w3-cyan w3-text-white" onclick="calculate('-')">Subtract</button>
+                  <button class="w3-button w3-cyan w3-text-white" onclick="calculate('*')">Multiply</button>
+                  <button class="w3-button w3-cyan w3-text-white" onclick="calculate('/')">Divide</button>
+                </div>
+	
+	        <div class="w3-panel w3-white w3-border w3-round">
+              <p><strong>Result:</strong> <span id="calcResult"></span></p>
+	        </div>
+        </div>
+
+        <!-- BMI Checker -->
+        <div class="tool-box">
+            <h3 style="color:white;">BMI Checker</h3>
+            <input type="number" id="weight" placeholder="Weight (kg)" class="w3-input">
+            <input type="number" id="height" placeholder="Height (m)" class="w3-input">
+            <button class="w3-button w3-cyan w3-margin-top w3-text-white" onclick="calculateBMI()">Check BMI</button>
+            <div class="w3-panel w3-white w3-border w3-round">
+	          <p><strong>Result:</strong> <span id="bmiResult"></span></p>
+	        </div>
+        </div>
+
+        <!-- Income Tax Calculator -->
+        <div class="tool-box">
+            <h3 style="color:white;">Income Tax Calculator (MY)</h3>
+            <input type="number" id="income" placeholder="Annual Income (RM)" class="w3-input">
+            <button class="w3-button w3-cyan w3-margin-top w3-text-white" onclick="calculateTax()">Calculate Tax</button>
+            <div class="w3-panel w3-white w3-border w3-round">
+	          <p><strong>Result:</strong> <span id="taxResult"></span></p>
+            </div>
+        </div>
+
+        <!-- Unit Converter -->
+        <div class="tool-box">
+            <h3 style="color:white;">Unit Converter</h3>
+
+            <label class="w3-text-white"><b>Enter Value</b></label>
+            <input class="w3-input w3-border w3-margin-bottom" type="number" id="inputValue" placeholder="Enter value">
+
+            <label class="w3-text-white"><b>Conversion Type</b></label>
+            <select class="w3-select w3-border w3-margin-bottom" id="conversionType">
+              <option value="km-to-m">Kilometers to Meters</option>
+              <option value="m-to-km">Meters to Kilometers</option>
+              <option value="m-to-cm">Meters to Centimeters</option>
+              <option value="cm-to-m">Centimeters to Meters</option>
+            </select>
+
+            <button class="w3-button w3-cyan w3-text-white w3-round w3-margin-bottom" onclick="convertUnit()">Convert</button>
+
+            <div class="w3-panel w3-white w3-border w3-round">
+              <p><strong>Result:</strong> <span id="unitResult"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-padding-64 w3-teal w3-" id="contact">
+  <h2 class="w3-center">Contact Me</h2>
+  <p class="w3-center">You can reach me via email: <strong>nurin@example.com</strong></p>
+
+  <!-- Social Media Icons -->
+  <div class="w3-center w3-xlarge w3-section">
+    <a href="#" class="w3-hover-opacity"><i class="fab fa-facebook-square"></i></a>
+    <a href="#" class="w3-hover-opacity"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="w3-hover-opacity"><i class="fab fa-pinterest"></i></a>
+    <a href="#" class="w3-hover-opacity"><i class="fab fa-twitter"></i></a>
+  </div>
+
+  <p class="w3-center">Powered by <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css</a></p>
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function calculate(op) {
+  const a = parseFloat(document.getElementById("num1").value);
+  const b = parseFloat(document.getElementById("num2").value);
+  let result = "-";
+  if (!isNaN(a) && !isNaN(b)) {
+    switch(op) {
+      case '+': result = a + b; break;
+      case '-': result = a - b; break;
+      case '*': result = a * b; break;
+      case '/': result = b !== 0 ? (a / b).toFixed(2) : '∞'; break;
+    }
+  }
+  document.getElementById("calcResult").textContent = result;
+}
+
+function calculateBMI() {
+  const w = parseFloat(document.getElementById("weight").value);
+  const h = parseFloat(document.getElementById("height").value);
+  if (w > 0 && h > 0) {
+    const bmi = (w / (h * h)).toFixed(2);
+    document.getElementById("bmiResult").textContent = bmi;
+  } else {
+    document.getElementById("bmiResult").textContent = "-";
+  }
+}
+
+function calculateTax() {
+  const income = parseFloat(document.getElementById("income").value);
+  let tax = 0;
+
+  if (income < 2000) {
+    tax = 0;
+  } else if (income < 5000) {
+    tax = income * 0.05;
+  } else {
+    tax = income * 0.10;
+  }
+
+  document.getElementById("taxResult").textContent = tax.toFixed(2);
+}
+
+function convertUnit() {
+  const value = parseFloat(document.getElementById("inputValue").value);
+  const type = document.getElementById("conversionType").value;
+  let result = "-";
+
+  if (!isNaN(value)) {
+    switch (type) {
+      case "km-to-m":
+        result = (value * 1000).toFixed(2) + " meters";
+        break;
+      case "m-to-km":
+        result = (value / 1000).toFixed(3) + " kilometers";
+        break;
+      case "m-to-cm":
+        result = (value * 100).toFixed(2) + " centimeters";
+        break;
+      case "cm-to-m":
+        result = (value / 100).toFixed(3) + " meters";
+        break;
+    }
+  }
+
+  document.getElementById("unitResult").textContent = result;
+}
+
+function playMusic() {
+  const audio = document.getElementById("bgMusic");
+  audio.play();
+}
+
+</script>
+
+</body>
+</html>
